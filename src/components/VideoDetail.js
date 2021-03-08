@@ -1,14 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-class VideoDetail extends React.Component {
-    render() {
-        return (
-            <div>
-                VideoDetail
-            </div>
-        );
+const VideoDetail = ({video}) => {
+    if (!video) {
+        return <div>Loading...</div>;
     }
+    return (
+        <div>
+            <div className="ui segment">
+                <h4 className="ui header">{video.snippet.title}</h4>
+                <p>{video.snippet.description}</p>
+            </div>
+        </div>
+    );
 }
 
 export default VideoDetail;
